@@ -17,13 +17,13 @@ const Sidebar = () => {
         </Link>
         <nav className='sidebar-nav'>
           <SignedIn>
-            <ul className='sidebare-nav_elements'>
+            <ul className='sidebare-nav_elements  '>
               {navLinks.slice(0,6).map((link) => {
                 const isActive = link.route === pathname
                 return (
-                  <li key={link.route} className={`sidebar-nav_element group ${isActive ? 'bg-purple-gradient text-white' : 'text-gray-700'
-                    }`}>
-                    <Link className='sidebare-link' href={link.route}>
+                  <li key={link.route} className={`sidebar-nav_element  
+                  ${isActive ? 'bg-purple-gradient text-white' : 'text-gray-700'}`}>
+                    <Link className='sidebar-link' href={link.route}>
                       <Image
                         src={link.icon}
                         alt='logo'
@@ -31,8 +31,7 @@ const Sidebar = () => {
                         height={24}
                         className={`${isActive && 'brightness-200'}`}
                       />
-                      {link.label}
-
+                                 {link.label}
                     </Link>
 
                   </li>
@@ -50,18 +49,9 @@ const Sidebar = () => {
                 return (
                   <li key={link.route} className={`sidebar-nav_element group ${isActive ? 'bg-purple-gradient text-white' : 'text-gray-700'
                     }`}>
-                    <Link className='sidebare-link ' href={link.route}>
-                      <Image
-                        src={link.icon}
-                        alt='logo'
-                        width={24}
-                        height={24}
-                        className={`${isActive && 'brightness-200'}`}
-                      />
-                      {link.label}
-
+                    <Link className='sidebar-link' href={link.route}>
+                      <Image src={link.icon} alt='logo' width={24} height={24} className={`${isActive && 'brightness-200'}`} /> {link.label}
                     </Link>
-
                   </li>
 
                 )
